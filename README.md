@@ -5,6 +5,13 @@ This is a solution designed for classroom teaching scenarios which allow teacher
 
 This solution is developed for the DIIAGE formation from Centre Universitaire Catholique De Bourgogne (CUCDB) in Dijon, France.
 
+# Use it yourself
+
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FGrevord%2Feducational-teams-bot%2Fdev%2Farm_templates%2Farm_deploy_ressources.json)
+
+
+
 # Feedback
 
 Thoughts, ideas or questions? Share them with us [here](https://github.com/Grevord/educational-teams-bot/issues/new)!
@@ -24,5 +31,5 @@ This app template is provided under the MIT License terms. In addition to these 
 - You must also include your own privacy statement and terms of use for the app if you choose to deploy or share it broadly.
 
 # Contributing
-
+___
 This project welcomes contributions and suggestions.
