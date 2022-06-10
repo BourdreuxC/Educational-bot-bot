@@ -11,7 +11,7 @@ namespace EducationalTeamsBotApi.WebApi.Controllers
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Bot.Schema;
-
+    //test
     /// <summary>
     /// Controller allowing to interact with questions.
     /// </summary>
