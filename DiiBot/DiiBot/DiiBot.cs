@@ -27,12 +27,9 @@ namespace DiiBot
             var messageText = turnContext.Activity.Text.Replace("\n", "");
             for (int i = 0; i < m.Length; i++)
             {
-                if (turnContext.Activity.MentionsId(m[i].Mentioned.Id))
+                if (turnContext.Activity.MentionsId(m[i].Mentioned.Id) && m[i].Text != null)
                 {
-                    //Bot is in the @mention list.
-                    //The below example will strip the bot name out of the message, so you can parse it as if it wasn't included. Note that the Text object will contain the full bot name, if applicable.
-                    if (m[i].Text != null)
-                        messageText = messageText.Replace(m[i].Text, "");
+                   messageText = messageText.Replace(m[i].Text, "");
                 }
             }
 
@@ -57,7 +54,7 @@ namespace DiiBot
             if (apiResponse.Mentions != null)
             {     
                 var members = await TeamsInfo.GetMembersAsync(turnContext);
-                var mem = members.Where(m => m.AadObjectId == apiResponse.Mentions[0]).First();
+                var mem = members.First(m => m.AadObjectId == apiResponse.Mentions[0]);
                 Mention mention = new Mention() { Mentioned = mem, Text = $"<at>{XmlConvert.EncodeName(mem.Name)}</at>" };
                 replyActivity.Text = $"{apiResponse.Answer} : {mention.Text}";
                 replyActivity.Entities = new List<Entity> { mention };
