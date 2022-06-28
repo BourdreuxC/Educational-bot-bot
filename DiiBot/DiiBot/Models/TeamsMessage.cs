@@ -17,6 +17,16 @@ namespace DiiBot.Models
         public string Message { get; set; }
 
         /// <summary>
+        /// Gets or sets the UserId.
+        /// </summary>
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ChannelId.
+        /// </summary>
+        public string ChannelId { get; set; }
+
+        /// <summary>
         /// Gets or sets if provided, the tags contained in the query.
         /// </summary>
         public List<string> Tags { get; set; }
