@@ -1,16 +1,22 @@
-﻿using System.Collections.Generic;
-
+﻿// <copyright file="ApiResponse.cs" company="DiiBot">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 namespace DiiBot.Models
 {
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Format the response recieved.
+    /// </summary>
     public class ApiResponse
     {
         /// <summary>
-        /// The answer of the question if exist.
+        /// Gets or sets the answer of the question if exist.
         /// </summary>
         public string Answer { get; set; }
 
         /// <summary>
-        /// The user to mention if needed.
+        /// Gets or sets the users to mention if needed.
         /// </summary>
         public List<string> Mentions { get; set; }
     }
