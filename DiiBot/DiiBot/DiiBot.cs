@@ -4,6 +4,7 @@
 
 namespace DiiBot
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
@@ -24,7 +25,7 @@ namespace DiiBot
         /// <inheritdoc/>
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            string api = "http://localhost:5025/api/Questions";
+            string api = $"{Environment.GetEnvironmentVariable("API_BASE_URL")}/Questions";
 
             Mention[] m = turnContext.Activity.GetMentions();
             var messageText = turnContext.Activity.Text.Replace("\n", string.Empty);
