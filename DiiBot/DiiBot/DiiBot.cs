@@ -48,7 +48,7 @@ namespace DiiBot
             }
 
             HttpClient http = new HttpClient();
-            TeamsMessage input = new TeamsMessage() { Message = messageText,  Tags = tags, ChannelId = turnContext.Activity.ChannelId, UserId = turnContext.Activity.From.AadObjectId, MessageId = turnContext.Activity.Id, TeamId = turnContext.Activity.TeamsGetTeamInfo().Id };
+            TeamsMessage input = new TeamsMessage() { Message = messageText,  Tags = tags, ChannelId = turnContext.Activity.TeamsGetChannelId(), UserId = turnContext.Activity.From.AadObjectId, MessageId = turnContext.Activity.Id, TeamId = turnContext.Activity.TeamsGetTeamInfo().Id };
             var json = JsonConvert.SerializeObject(input);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             HttpResponseMessage response = await http.PostAsync(api, content);
